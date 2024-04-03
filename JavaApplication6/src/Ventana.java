@@ -84,12 +84,18 @@ public class Ventana extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnConvertirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConvertirActionPerformed
+        try {
+            int num = Integer.valueOf(txtIngresoNumero.getText());
+            int Convertido;
+
+            Convertido = (num * 9 / 5) + 32;
+            JOptionPane.showMessageDialog(null, "La conversion es: " + Convertido);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Valor no permitido...");
+        } catch(Exception ee){
+            JOptionPane.showMessageDialog(null, "Error general");
+        }
         
-        int num = Integer.valueOf( txtIngresoNumero.getText() );
-        int Convertido;
-        
-        Convertido = ( num*9/5 )+32;
-        JOptionPane.showMessageDialog(null, "La conversion es: " + Convertido);
         
         
     }//GEN-LAST:event_btnConvertirActionPerformed
