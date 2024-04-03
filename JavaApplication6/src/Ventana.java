@@ -1,4 +1,8 @@
 
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -18,10 +22,11 @@ public class Ventana extends javax.swing.JFrame {
     /**
      * Creates new form Ventana
      */
-    public Ventana() {
+    public Ventana() throws MalformedURLException {
         initComponents();
         setTitle("Conversor");
-        ImageIcon icon = new ImageIcon("C:/Users//river/Documents/GitHub/TP4_Laboratorio/btn_32x32.png");
+        URL imagenUrl = new URL("https://raw.githubusercontent.com/FMenichetti/TP4_Laboratorio/main/btn_32x32.png");
+        ImageIcon icon = new ImageIcon(imagenUrl);
         setIconImage(icon.getImage());
         
     }
@@ -150,7 +155,11 @@ public class Ventana extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Ventana().setVisible(true);
+                try {
+                    new Ventana().setVisible(true);
+                } catch (MalformedURLException ex) {
+                    Logger.getLogger(Ventana.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
         
