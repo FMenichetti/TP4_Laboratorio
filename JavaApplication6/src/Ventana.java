@@ -35,10 +35,23 @@ public class Ventana extends javax.swing.JFrame {
         btnConvertir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
-        lblIngresoNumero.setText("ingrese un valor en celsius");
+        jPanel1.setBackground(new java.awt.Color(152, 196, 222));
 
-        btnConvertir.setText("convertir");
+        lblIngresoNumero.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        lblIngresoNumero.setForeground(new java.awt.Color(48, 109, 166));
+        lblIngresoNumero.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIngresoNumero.setText("Ingrese un valor en celsius");
+        lblIngresoNumero.setToolTipText("");
+        lblIngresoNumero.setAlignmentY(0.0F);
+
+        btnConvertir.setBackground(new java.awt.Color(68, 117, 153));
+        btnConvertir.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
+        btnConvertir.setForeground(new java.awt.Color(255, 255, 255));
+        btnConvertir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btn_32x32.png"))); // NOI18N
+        btnConvertir.setText("Convertir");
+        btnConvertir.setIconTextGap(20);
         btnConvertir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConvertirActionPerformed(evt);
@@ -50,12 +63,12 @@ public class Ventana extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnConvertir, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtIngresoNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblIngresoNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(210, Short.MAX_VALUE))
+                .addContainerGap(100, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtIngresoNumero)
+                    .addComponent(btnConvertir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblIngresoNumero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -81,6 +94,7 @@ public class Ventana extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnConvertirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConvertirActionPerformed
@@ -89,7 +103,7 @@ public class Ventana extends javax.swing.JFrame {
             int Convertido;
 
             Convertido = (num * 9 / 5) + 32;
-            JOptionPane.showMessageDialog(null, "La conversion es: " + Convertido);
+            JOptionPane.showMessageDialog(null, num + " °C equivalen a: " + Convertido + " °F");
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Valor no permitido...");
         } catch(Exception ee){
