@@ -1,5 +1,7 @@
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -18,6 +20,10 @@ public class Ventana extends javax.swing.JFrame {
      */
     public Ventana() {
         initComponents();
+        setTitle("Conversor");
+        ImageIcon icon = new ImageIcon("C:/Users//river/Documents/GitHub/TP4_Laboratorio/btn_32x32.png");
+        setIconImage(icon.getImage());
+        
     }
 
     /**
@@ -110,7 +116,7 @@ public class Ventana extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Error general");
         }
         
-        
+       
         
     }//GEN-LAST:event_btnConvertirActionPerformed
 
@@ -147,6 +153,8 @@ public class Ventana extends javax.swing.JFrame {
                 new Ventana().setVisible(true);
             }
         });
+        
+       
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
