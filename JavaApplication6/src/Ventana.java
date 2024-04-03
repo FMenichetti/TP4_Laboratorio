@@ -110,8 +110,8 @@ public class Ventana extends javax.swing.JFrame {
 
     private void btnConvertirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConvertirActionPerformed
         try {
-            int num = Integer.valueOf(txtIngresoNumero.getText());
-            int Convertido;
+            double num = Double.valueOf(txtIngresoNumero.getText());
+            double Convertido;
 
             Convertido = (num * 9 / 5) + 32;
             JOptionPane.showMessageDialog(null, num + " °C equivalen a: " + Convertido + " °F");
